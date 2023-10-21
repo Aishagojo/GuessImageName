@@ -18,7 +18,7 @@ function displayImage(index) {
 }
 
 function startTimer() {
-    let seconds = 10;
+    let seconds = 15;
     timer = setInterval(() => {
         document.getElementById('timer').textContent = `Time left: ${seconds}s`;
         seconds--;
@@ -33,7 +33,7 @@ function startTimer() {
                 endGame();
             }
         }
-    }, 1000);
+    }, 900);
 }
 
 function CheckAnswer() {
