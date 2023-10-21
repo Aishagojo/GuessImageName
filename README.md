@@ -18,7 +18,7 @@ Guessing Game is a simple web-based game where players guess the names of displa
 - JavaScript
 
 ## view the project here
-[Demo] (guess-image-game.netlify.app)
+[Demo] (https://guess-image-game.netlify.app)
 
 
 
