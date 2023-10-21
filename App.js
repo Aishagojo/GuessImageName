@@ -3,7 +3,7 @@ const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
     { name: 'light Yagami', src: './light Yagami.jpg' },
-    { name: 'bermuda', src: './bermuda triangle.jpg' },
+    { name: 'bermuda triangle', src: './bermuda triangle.jpg' },
     { name: 'jeffrey Dahmer', src: './jeffrey Dahmer.jpg' }
 ];
 
@@ -60,12 +60,11 @@ function CheckAnswer() {
 }
 
 function endGame() {
-    const scoreButton = document.getElementById('scoreButton');
-    scoreButton.textContent = `Final Score: ${score}`;
+    const scoreDisplay = document.getElementById('score');
+    scoreDisplay.textContent = `Final Score: ${score}`;
     score = 0;
     gameStarted = false;
     currentIndex = 0;
-    document.getElementById('score').textContent = `Score: ${score}`;
 }
 
 // Get references to buttons
@@ -78,8 +77,8 @@ startButton.addEventListener('click', () => {
         gameStarted = true;
         displayImage(currentIndex);
         startTimer();
-        const scoreButton = document.getElementById('scoreButton');
-        scoreButton.textContent = ''; // Clear the final score display
+        const scoreDisplay = document.getElementById('score');
+        scoreDisplay.textContent = ''; // Clear the final score display
     }
 });
 
