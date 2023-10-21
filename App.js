@@ -3,7 +3,8 @@ const images = [
     { name: 'pyramid', src: './pyramid.jpg' },
     { name: 'light Yagami', src: './light Yagami.jpg' },
     { name: 'bermuda triangle', src: './bermuda triangle.jpg' },
-    { name: 'jeffrey Dahmer', src: './jeffrey Dahmer.jpg' }
+    { name: 'jeffrey Dahmer', src: './jeffrey Dahmer.jpg' },
+    // Add more question objects as needed
 ];
 
 let score = 0;
@@ -18,9 +19,10 @@ function displayImage(index) {
 }
 
 function startTimer() {
-    let seconds = 10;
+    let seconds = 15;
     timer = setInterval(() => {
-        document.getElementById('timer').textContent = `Time left: ${seconds}s`;
+        document.getElementById('timer').textContent = `Time left: `;
+        document.getElementById('time-remaining').textContent = `${seconds}s`;
         seconds--;
 
         if (seconds < 0) {
@@ -33,7 +35,7 @@ function startTimer() {
                 endGame();
             }
         }
-    }, 900);
+    }, 1000);
 }
 
 function CheckAnswer() {
