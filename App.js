@@ -1,3 +1,4 @@
+
 const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
@@ -42,17 +43,20 @@ function CheckAnswer() {
 
     if (userGuess === correctAnswer) {
         score++;
-        document.getElementById('score').textContent = score;
-        clearInterval(timer);
-        currentIndex++;
-        if (currentIndex < images.length) {
-            displayImage(currentIndex);
-            startTimer();
-        } else {
-            endGame();
-        }
-        document.getElementById('userInput').value = '';
+        document.getElementById('score').textContent = `Score: ${score}`;
     }
+
+    clearInterval(timer);
+    currentIndex++;
+
+    if (currentIndex < images.length) {
+        displayImage(currentIndex);
+        startTimer();
+    } else {
+        endGame();
+    }
+
+    document.getElementById('userInput').value = '';
 }
 
 function endGame() {
@@ -60,7 +64,8 @@ function endGame() {
     scoreButton.textContent = `Final Score: ${score}`;
     score = 0;
     gameStarted = false;
-    // Reset other game variables and elements as needed
+    currentIndex = 0;
+    document.getElementById('score').textContent = `Score: ${score}`;
 }
 
 // Get references to buttons
@@ -73,6 +78,8 @@ startButton.addEventListener('click', () => {
         gameStarted = true;
         displayImage(currentIndex);
         startTimer();
+        const scoreButton = document.getElementById('scoreButton');
+        scoreButton.textContent = ''; // Clear the final score display
     }
 });
 
