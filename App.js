@@ -57,7 +57,7 @@ function CheckAnswer() {
             score++;
         }
 
-        score++;
+        
         currentIndex++;
 
         if (currentIndex < images.length) {
