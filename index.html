@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuessPict game </title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="Conatiner">
+        <div class="game-board">
+            <div class="image-container" id="image-conatiner">
+                <img id="displayed-image" src="" alt="Displayed Image">
+               
+            </div>
+       <input type="text" id="userInput"  placeholder="Your guess">
+       <button class="final" onclick="CheckAnswer()" id="submitbtn">Submit</button>
+     </div>
+       <div class="scoreboard">
+        <span>Score: <span id="score">0</span></span>
+        <span id="timer">Time left:10s</span>
+       </div>  
+       <button  id="scoreButton">Final Score</button>
+
+    </section>
+    
+</body>
+<script src="./App.js"  defer></script>
+</html>
