@@ -1,7 +1,8 @@
+
 const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
-    { name: 'death note', src: './light Yagami.jpg' },
+    { name: 'light Yagami', src: './light Yagami.jpg' },
     { name: 'bermuda triangle', src: './bermuda triangle.jpg' },
     { name: 'jeffrey Dahmer', src: './jeffrey Dahmer.jpg' }
 ];
@@ -20,18 +21,22 @@ function displayImage(index) {
 function startTimer() {
     let seconds = 10;
     timer = setInterval(() => {
-        document.getElementById('timer').textContent = `Time left: ${seconds}s`;
-        seconds--;
+        if (gameStarted && seconds >= 0) {
+            document.getElementById('timer').textContent = `Time left: ${seconds}s`;
+            seconds--;
 
-        if (seconds < 0) {
-            clearInterval(timer);
-            currentIndex++;
-            if (currentIndex < images.length) {
-                displayImage(currentIndex);
-                startTimer();
-            } else {
-                endGame();
+            if (seconds < 0) {
+                clearInterval(timer);
+                currentIndex++;
+                if (currentIndex < images.length) {
+                    displayImage(currentIndex);
+                    startTimer();
+                } else {
+                    endGame();
+                }
             }
+        } else if (!gameStarted) {
+            clearInterval(timer); // Stop the timer if the game has ended
         }
     }, 1000);
 }
