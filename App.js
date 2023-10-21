@@ -37,7 +37,7 @@ function startTimer() {
         } else if (!gameStarted) {
             clearInterval(timer); // Stop the timer if the game has ended
         }
-    }, 1000);
+    }, 2000);
 }
 
 function CheckAnswer() {
