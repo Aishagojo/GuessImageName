@@ -42,21 +42,24 @@ function CheckAnswer() {
 
     if (userGuess === correctAnswer) {
         score++;
-        document.getElementById('score').textContent = score;
-        clearInterval(timer);
-        currentIndex++;
-        if (currentIndex < images.length) {
-            displayImage(currentIndex);
-            startTimer();
-        } else {
-            endGame();
-        }
-        document.getElementById('userInput').value = '';
+        document.getElementById('score').textContent = `Score: ${score}`;
     }
+
+    clearInterval(timer);
+    currentIndex++;
+
+    if (currentIndex < images.length) {
+        displayImage(currentIndex);
+        startTimer();
+    } else {
+        endGame();
+    }
+
+    document.getElementById('userInput').value = '';
 }
 
 function endGame() {
-    const scoreButton = document.getElementById('scoreButton');
+    const scoreButton = document.getElementById('startButton');
     scoreButton.textContent = `Final Score: ${score}`;
     score = 0;
     gameStarted = false;
