@@ -1,3 +1,4 @@
+
 const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
@@ -64,7 +65,7 @@ function endGame() {
     score = 0;
     gameStarted = false;
     currentIndex = 0;
-    document.getElementById('score').textContent = `Score: ${score}`;
+    document.getElementById('score').textContent = 'Score: 0';
 }
 
 // Get references to buttons
