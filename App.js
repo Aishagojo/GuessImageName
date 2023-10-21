@@ -1,4 +1,3 @@
-
 const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
@@ -38,25 +37,26 @@ function startTimer() {
 }
 
 function CheckAnswer() {
-    const userGuess = document.getElementById('userInput').value.toLowerCase();
-    const correctAnswer = images[currentIndex].name.toLowerCase();
+    if (gameStarted) {
+        const userGuess = document.getElementById('userInput').value.toLowerCase();
+        const correctAnswer = images[currentIndex].name.toLowerCase();
 
-    if (userGuess === correctAnswer) {
-        score++;
-        document.getElementById('score').textContent = `Score: ${score}`;
+        if (userGuess === correctAnswer) {
+            score++;
+            document.getElementById('score').textContent = `Score: ${score}`;
+        }
+
+        currentIndex++;
+
+        if (currentIndex < images.length) {
+            displayImage(currentIndex);
+            startTimer();
+        } else {
+            endGame();
+        }
+
+        document.getElementById('userInput').value = '';
     }
-
-    clearInterval(timer);
-    currentIndex++;
-
-    if (currentIndex < images.length) {
-        displayImage(currentIndex);
-        startTimer();
-    } else {
-        endGame();
-    }
-
-    document.getElementById('userInput').value = '';
 }
 
 function endGame() {
@@ -66,6 +66,7 @@ function endGame() {
     gameStarted = false;
     currentIndex = 0;
     document.getElementById('score').textContent = 'Score: 0';
+    clearInterval(timer); // Stop the timer
 }
 
 // Get references to buttons
