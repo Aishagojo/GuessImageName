@@ -18,7 +18,7 @@ function displayImage(index) {
 }
 
 function startTimer() {
-    let seconds = 15;
+    let seconds = 10;
     timer = setInterval(() => {
         document.getElementById('timer').textContent = `Time left: ${seconds}s`;
         seconds--;
