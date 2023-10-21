@@ -1,9 +1,18 @@
+
 const images = [
     { name: 'titanic', src: './oceann.jpg' },
+    { name: 'jeffrey ', src: './jeffrey Dahmer.jpg' },
+    { name: 'bermuda ', src: './bermuda triangle.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
-    { name: 'death note ', src: './light Yagami.jpg' },
-    { name: 'bermuda', src: './bermuda triangle.jpg' },
-    { name: 'jeffrey', src: './jeffrey Dahmer.jpg' }
+    { name: 'death note', src: './light Yagami.jpg' },
+    { name: 'mahito ', src: './mahito.jpg' },
+    { name: 'pyramid', src: './pyramid.jpg' },
+    { name: 'mahito ', src: './mahito.jpg' },
+    { name: 'jeffrey ', src: './jeffrey Dahmer.jpg' },
+    { name: 'titanic', src: './oceann.jpg' },
+  
+
+
 ];
 
 let score = 0;
@@ -19,6 +28,7 @@ function displayImage(index) {
 
 function startTimer() {
     let seconds = 10;
+    clearInterval(timer); // Clear any existing intervals before starting a new one
     timer = setInterval(() => {
         if (gameStarted && seconds >= 0) {
             document.getElementById('timer').textContent = `Time left: ${seconds}s`;
@@ -30,9 +40,7 @@ function startTimer() {
                 if (currentIndex < images.length) {
                     displayImage(currentIndex);
                     startTimer();
-                } else {
-                    endGame();
-                }
+                } 
             }
         } else if (!gameStarted) {
             clearInterval(timer); // Stop the timer if the game has ended
@@ -47,21 +55,24 @@ function CheckAnswer() {
 
         if (userGuess === correctAnswer) {
             score++;
-            document.getElementById('score').textContent = `Score: ${score}`;
         }
 
+        score++;
         currentIndex++;
 
         if (currentIndex < images.length) {
             displayImage(currentIndex);
+            document.getElementById('score').textContent = `Score: ${score}`;
             startTimer();
-        } else {
+        }  else{
+            score++;
             endGame();
         }
 
         document.getElementById('userInput').value = '';
     }
 }
+
 
 function endGame() {
     const scoreButton = document.getElementById('scoreButton');
