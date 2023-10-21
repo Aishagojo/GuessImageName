@@ -1,4 +1,3 @@
-
 const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
@@ -10,6 +9,7 @@ const images = [
 let score = 0;
 let currentIndex = 0;
 let timer;
+let gameStarted = false;
 
 function displayImage(index) {
     const displayedImage = document.getElementById('displayed-image');
@@ -30,7 +30,7 @@ function startTimer() {
                 displayImage(currentIndex);
                 startTimer();
             } else {
-                endGame()
+                endGame();
             }
         }
     }, 1000);
@@ -38,7 +38,7 @@ function startTimer() {
 
 function CheckAnswer() {
     const userGuess = document.getElementById('userInput').value.toLowerCase();
-    const correctAnswer = document.getElementById('displayed-image').alt.toLowerCase();
+    const correctAnswer = images[currentIndex].name.toLowerCase();
 
     if (userGuess === correctAnswer) {
         score++;
@@ -55,14 +55,26 @@ function CheckAnswer() {
     }
 }
 
-
 function endGame() {
     const scoreButton = document.getElementById('scoreButton');
     scoreButton.textContent = `Final Score: ${score}`;
     score = 0;
+    gameStarted = false;
     // Reset other game variables and elements as needed
 }
 
-// Initial setup
-displayImage(currentIndex);
-startTimer();
+// Get references to buttons
+const startButton = document.getElementById('startButton');
+const submitButton = document.getElementById('submitbtn');
+
+// Add click event listener to start button
+startButton.addEventListener('click', () => {
+    if (!gameStarted) {
+        gameStarted = true;
+        displayImage(currentIndex);
+        startTimer();
+    }
+});
+
+// Add click event listener to submit button
+submitButton.addEventListener('click', CheckAnswer);
