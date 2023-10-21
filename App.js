@@ -1,7 +1,7 @@
 const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
-    { name: 'light Yagami', src: './light Yagami.jpg' },
+    { name: 'death note ', src: './light Yagami.jpg' },
     { name: 'bermuda', src: './bermuda triangle.jpg' },
     { name: 'jeffrey', src: './jeffrey Dahmer.jpg' }
 ];
