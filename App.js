@@ -65,7 +65,7 @@ function CheckAnswer() {
             document.getElementById('score').textContent = `Score: ${score}`;
             startTimer();
         }  else{
-            score++;
+            
             endGame();
         }
 
