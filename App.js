@@ -1,4 +1,3 @@
-
 const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'jeffrey ', src: './jeffrey Dahmer.jpg' },
@@ -57,7 +56,7 @@ function CheckAnswer() {
             score++;
         }
 
-        
+         
         currentIndex++;
 
         if (currentIndex < images.length) {
@@ -65,7 +64,7 @@ function CheckAnswer() {
             document.getElementById('score').textContent = `Score: ${score}`;
             startTimer();
         }  else{
-            
+            score++;
             endGame();
         }
 
