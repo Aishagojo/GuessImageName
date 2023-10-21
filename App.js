@@ -2,8 +2,8 @@ const images = [
     { name: 'titanic', src: './oceann.jpg' },
     { name: 'pyramid', src: './pyramid.jpg' },
     { name: 'light Yagami', src: './light Yagami.jpg' },
-    { name: 'bermuda triangle', src: './bermuda triangle.jpg' },
-    { name: 'jeffrey Dahmer', src: './jeffrey Dahmer.jpg' }
+    { name: 'bermuda', src: './bermuda triangle.jpg' },
+    { name: 'jeffrey', src: './jeffrey Dahmer.jpg' }
 ];
 
 let score = 0;
