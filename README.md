@@ -1,4 +1,3 @@
-﻿
 
 # Guessing Game
 
@@ -37,8 +36,8 @@ Guessing Game is a simple web-based game where players guess the names of displa
 
 ## Author
 
-[Your Name]
+[Aisha Omar Farah]
 
 ## License
 
-This project is licensed under the [License Name] License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the [Aisha Omar ] License - see the [LICENSE.md](LICENSE.md) file for details.
